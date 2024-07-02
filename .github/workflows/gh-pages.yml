@@ -1,6 +1,9 @@
 name: Release to Github Pages
 
-on: workflow_dispatch
+on:
+  push:
+    branches: [master]
+  workflow_dispatch:
 
 permissions:
   contents: write # for committing to gh-pages branch.
