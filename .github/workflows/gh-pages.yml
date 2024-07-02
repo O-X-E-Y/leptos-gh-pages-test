@@ -54,7 +54,7 @@ jobs:
 
     - name: Build with Trunk
       # run: ./trunk build --release --public-url "${GITHUB_REPOSITORY#*/}"
-      run: cd ./web && ../trunk build --release --public-url "${GITHUB_REPOSITORY#*/}" # && cp ./dist/index.html ./dist/404.html
+      run: cd ./web && ../trunk build --public-url "${GITHUB_REPOSITORY#*/}" # && cp ./dist/index.html ./dist/404.html
         # "${GITHUB_REPOSITORY#*/}" evaluates into the name of the repository
         # using --public-url something will allow trunk to modify all the href paths like from favicon.ico to repo_name/favicon.ico .
         # this is necessary for github pages where the site is deployed to username.github.io/repo_name and all files must be requested

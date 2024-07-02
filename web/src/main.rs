@@ -23,11 +23,13 @@ fn App() -> impl IntoView {
                 </A>
             </nav>
             <Routes>
-                <Route path="/" view=Home/>
-                <Route path="/layouts" view=LayoutsWrapper>
-                    <Route path=":name" view=Layout/>
-                    <Route path="/" view=Layouts/>
-                </Route>
+                // <Route path="/leptos-gh-pages-test" view=move || {}>
+                    <Route path="/" view=Home/>
+                    <Route path="/layouts" view=LayoutsWrapper>
+                        <Route path="/:name" view=Layout/>
+                        <Route path="/" view=Layouts/>
+                    </Route>
+                // </Route>
             </Routes>
         </Router>
     }
@@ -35,7 +37,10 @@ fn App() -> impl IntoView {
 
 #[component]
 fn Home() -> impl IntoView {
-    "Home page"
+    view! {
+        <div>"Home page"</div>
+        <A href="/layouts">{"layouts"}</A>
+    }
 }
 
 #[component]
