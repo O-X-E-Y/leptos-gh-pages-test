@@ -15,24 +15,26 @@ fn App() -> impl IntoView {
     view! {
         <Router
             // trailing_slash=leptos_router::TrailingSlash::Redirect
-            // base="leptos-gh-pages-test"
+            base="leptos-gh-pages-test"
         >
-            <nav class=css::nav>
-                <A href="/">
-                    <h3>{"Go Home"}</h3>
-                </A>
-            </nav>
-            <Routes
-                base={"/leptos-gh-pages-test".to_string()}
-            >
-                // <Route path="/leptos-gh-pages-test" view=move || {}>
-                    <Route path="/" view=Home/>
-                    <Route path="/layouts" view=LayoutsWrapper>
-                        <Route path="/:name" view=Layout/>
-                        <Route path="/" view=Layouts/>
-                    </Route>
-                // </Route>
-            </Routes>
+            <main>
+                <nav class=css::nav>
+                    <A href="/">
+                        <h3>{"Go Home"}</h3>
+                    </A>
+                </nav>
+                <Routes
+                    base={"/leptos-gh-pages-test".to_string()}
+                >
+                    // <Route path="/leptos-gh-pages-test" view=move || {}>
+                        <Route path="/" view=Home/>
+                        <Route path="/layouts" view=LayoutsWrapper>
+                            <Route path="/:name" view=Layout/>
+                            <Route path="/" view=Layouts/>
+                        </Route>
+                    // </Route>
+                </Routes>
+            </main>
         </Router>
     }
 }
