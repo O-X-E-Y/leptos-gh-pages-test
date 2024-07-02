@@ -15,7 +15,7 @@ fn App() -> impl IntoView {
     view! {
         <Router
             trailing_slash=leptos_router::TrailingSlash::Redirect
-            // base="oxeylyzer-2"
+            base="leptos-gh-pages-test"
         >
             <nav class=css::nav>
                 <A href="/">
