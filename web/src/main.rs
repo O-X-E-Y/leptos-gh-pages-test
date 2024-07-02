@@ -12,14 +12,16 @@ pub fn main() {
 
 #[component]
 fn App() -> impl IntoView {
+    let v = leptos_router::TrailingSlash::Drop;
+
     view! {
         <Router
-            // trailing_slash=leptos_router::TrailingSlash::Redirect
+            trailing_slash=leptos_router::TrailingSlash::Drop
             base="leptos-gh-pages-test"
         >
             <main>
                 <nav class=css::nav>
-                    <A href="/">
+                    <A href="/leptos-gh-pages-test">
                         <h3>{"Go Home"}</h3>
                     </A>
                 </nav>
@@ -28,8 +30,8 @@ fn App() -> impl IntoView {
                 >
                     // <Route path="/leptos-gh-pages-test" view=move || {}>
                         <Route path="/" view=Home/>
-                        <Route path="/layouts" view=LayoutsWrapper>
-                            <Route path="/:name" view=Layout/>
+                        <Route path="/layouts/" view=LayoutsWrapper>
+                            <Route path="/:name/" view=Layout/>
                             <Route path="/" view=Layouts/>
                         </Route>
                     // </Route>
@@ -43,7 +45,7 @@ fn App() -> impl IntoView {
 fn Home() -> impl IntoView {
     view! {
         <div>"Home page"</div>
-        <A href="/layouts">{"layouts"}</A>
+        <A href="./layouts">{"layouts"}</A>
     }
 }
 
