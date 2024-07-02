@@ -14,8 +14,8 @@ pub fn main() {
 fn App() -> impl IntoView {
     view! {
         <Router
-            trailing_slash=leptos_router::TrailingSlash::Drop
-            base="leptos-gh-pages-test"
+            // trailing_slash=leptos_router::TrailingSlash::Drop
+            base="/leptos-gh-pages-test"
         >
             <main>
                 <nav class=css::nav>
@@ -24,12 +24,12 @@ fn App() -> impl IntoView {
                     </A>
                 </nav>
                 <Routes
-                    base={"leptos-gh-pages-test".to_string()}
+                    base={"/leptos-gh-pages-test".to_string()}
                 >
                     <Route path="/" view=Home/>
-                    <Route path="/layouts/" view=LayoutsWrapper>
-                        <Route path="/:name/" view=Layout/>
-                        <Route path="/" view=Layouts/>
+                    <Route path="layouts" view=LayoutsWrapper>
+                        <Route path=":name" view=Layout/>
+                        <Route path="" view=Layouts/>
                     </Route>
                 </Routes>
             </main>
